@@ -84,8 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Business input event
-        elements.placeInput.addEventListener('input', function () {
-            setStoredBusinessInput(this.value);
+        elements.placeInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                handleSearch();
+            }
         });
 
         // Fetch button event
@@ -217,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add the storage note at the top
         const storageNote = document.createElement('p');
         storageNote.className = 'default-output';
-        storageNote.textContent = 'Previously loaded from local storage';
+        storageNote.textContent = 'Previous values loaded from local storage';
         elements.output.appendChild(storageNote);
 
         // Create the result container

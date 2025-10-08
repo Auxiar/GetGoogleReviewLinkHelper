@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Place ID Finder</title>
+  <title>Google Review Helper</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,20 +15,23 @@
 
 <body>
 
-  <h1>Google Place ID Finder</h1>
-  <p>Enter your <strong>Google API Key</strong> and a business name or Maps link to retrieve its <strong>Place
-      ID</strong> and Google Review link, as well as QR codes pointing to the Review Page and the Maps Business Page.
+  <h1>Google Review Helper</h1>
+  <p>
+    Enter your <strong>Google Places API Key</strong> and a business name or Maps link to retrieve a <strong>Google Review</strong> link, as well as <strong>QR Codes</strong> pointing to the Review Page and the Maps Business Page ands its <strong>Place ID</strong> if you need it for something other than the direct Google Review link.
   </p>
 
-  <label>Google API Key:
-    <input type="text" id="apiKey" placeholder="Your Google Maps API Key">
+  <label>Google Places API Key:
+    <input type="text" id="apiKey" placeholder="Your Google Places API Key">
   </label>
-  <div class="storage-note">
-    Your API key is saved locally in your browser and never sent anywhere except Google's API.
+  <div class="big-note">
+    <p>
+      The <strong>Google Places API</strong> has a generous free monthly credit of up to <strong>10,000</strong> monthly API calls, meaning for the occasional lookup, this service is basically free to use. <strong>However</strong>, they do still require you to set up a <strong>Google Developer Account</strong> with a valid billing account in order to use this service. If you're using this service to help clients get Google Reviews, then the small amount of work necessary to set everything up is well worth it for what you can offer them.
+    </p>
+      Your API key is saved <strong>locally</strong> in your browser and <strong>never</strong> sent anywhere except back to Google.
   </div>
   <div class="note">
     <a href="https://developers.google.com/maps/documentation/places/web-service/get-api-key" target="_blank">
-      Get your own Google Maps API Key
+      Get your own Google Places API Key
     </a>
   </div>
 
@@ -36,10 +39,25 @@
     <input type="text" id="placeInput" placeholder="Enter business name or Google Maps link">
   </label>
 
-  <button id="fetchBtn">Find Place ID</button>
+  <button id="fetchBtn">Submit Places Search</button>
 
   <div id="output">
     <p class="default-output">Waiting for submission...</p>
+  </div>
+
+  <div class="big-note note">
+  <p>
+    Credits:<br>
+    Google Places API: <a href="https://console.cloud.google.com/marketplace/product/google/places-backend.googleapis.com?project=big-station-474403-e9" target="_blank">Places API</a> | <a href="https://about.google/company-info/" target="_blank">Google</a><br>
+    QR Code Generation: <a href="https://github.com/davidshimjs/qrcodejs" target="_blank">QRCode.js</a> | <a href="https://github.com/davidshimjs" target="_blank">davidshimjs</a><br>
+    Code Assist: <a href="https://chat.z.ai/" target="_blank">GLM-4.6</a> | <a href="https://x.com/zai_org" target="_blank">Z.ai</a><br>
+  </p>
+  <p>
+    Note:<br>
+    AI was used to turn this full day coding job into an hour-long coding job. I know how to write HTML, program with JS, and style with CSS. I understand how to interact with cloud-based API's and use keys to submit requests to external services. I chose to use GLM-4.6 (and some Claude 4.5) to speed up the creation of this tool by making it do a lot of the gruntwork of setting up the base that I could then tune and tweak to my liking. I just needed a quick and dirty solution to getting a Google review link (and QR codes) quickly and easily without relying on some 3rd party to get it for me. AI assisted me in doing so at a much faster pace than if I had done it on my own. If that upsets you, feel free to write up your own tool and use that instead. Either way, I hope you find use in this tool and enjoy using it for whatever you might need.
+  </p>
+    Happy Hunting,<br>
+    - Auxiar Molkhun -
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
