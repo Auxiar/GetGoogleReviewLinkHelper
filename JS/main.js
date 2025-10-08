@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add the storage note at the top
         const storageNote = document.createElement('p');
         storageNote.className = 'default-output';
-        storageNote.textContent = 'Previous values loaded from local storage';
+        storageNote.textContent = 'Previous search result loaded from local storage';
         elements.output.appendChild(storageNote);
 
         // Create the result container
