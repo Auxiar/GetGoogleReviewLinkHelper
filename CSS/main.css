@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    background-color: rgb(23, 23, 23);
+    color: rgb(210, 191, 149);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: rgb(170, 101, 25);
+    font-weight: 700;
+    font-family: 'Noto Sans Mono', monospace;
+    letter-spacing: -0.5px;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 400;
+    color: rgb(210, 191, 149);
+    font-family: 'Noto Sans Mono', monospace;
+    margin-bottom: 0.75rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: 'Noto Sans Mono', monospace;
+    background-color: rgb(35, 35, 35);
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 8px;
+    color: rgb(210, 191, 149);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(170, 101, 25);
+    background-color: rgb(40, 40, 40);
+}
+
+input::placeholder {
+    color: rgb(120, 120, 120);
+}
+
+button {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-family: 'Noto Sans Mono', monospace;
+    background-color: rgb(40, 40, 40);
+    color: rgb(170, 101, 25);
+    border: 2px solid rgb(170, 101, 25);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: rgb(170, 101, 25);
+    color: rgb(23, 23, 23);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#output {
+    margin-top: 2rem;
+    word-break: break-all;
+    padding: 1.5rem;
+    background-color: rgb(30, 30, 30);
+    border-radius: 12px;
+    border: 1px solid rgb(50, 50, 50);
+    border-left: 3px solid rgb(170, 101, 25);
+}
+
+#output p {
+    margin-bottom: 0.75rem;
+}
+
+#output p strong {
+    color: rgb(170, 101, 25);
+    font-weight: 600;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.button-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.business-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(170, 101, 25);
+    background-color: rgb(40, 40, 40);
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid rgb(170, 101, 25);
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Noto Sans Mono', monospace;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.business-link:hover {
+    background-color: rgb(170, 101, 25);
+    color: rgb(23, 23, 23);
+    transform: translateY(-2px);
+}
+
+.link-box {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+button.copy {
+    flex: 1;
+    margin-top: 0;
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+    background: rgb(50, 50, 50);
+    color: rgb(210, 191, 149);
+    border: none;
+}
+
+button.copy:hover {
+    background: rgb(60, 60, 60);
+    color: rgb(210, 191, 149);
+    transform: translateY(-2px);
+}
+
+a.review-link {
+    flex: 3;
+    text-decoration: none;
+    color: rgb(170, 101, 25);
+    background-color: rgb(40, 40, 40);
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    border: 2px solid rgb(170, 101, 25);
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+a.review-link:hover {
+    background-color: rgb(170, 101, 25);
+    color: rgb(23, 23, 23);
+    transform: translateY(-2px);
+}
+
+.note {
+    font-size: 0.9rem;
+    color: rgb(150, 150, 150);
+    margin-top: 0.5rem;
+}
+
+.note a {
+    color: rgb(170, 101, 25);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.note a:hover {
+    border-bottom-color: rgb(170, 101, 25);
+}
+
+.debug {
+    font-size: 0.85rem;
+    color: rgb(120, 120, 120);
+    margin-top: 1rem;
+    font-family: 'Noto Sans Mono', monospace;
+    font-style: italic;
+}
+
+.storage-note {
+    font-size: 0.85rem;
+    color: rgb(150, 150, 150);
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgb(30, 30, 30);
+    border-left: 3px solid rgb(170, 101, 25);
+    border-radius: 4px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.default-output {
+    color: rgb(150, 150, 150);
+    font-style: italic;
+}
+
+/* QR Code Styles */
+.qr-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(50, 50, 50);
+}
+
+.qr-settings {
+    margin-bottom: 1.5rem;
+}
+
+.qr-settings h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: rgb(170, 101, 25);
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-container label {
+    margin: 0;
+    flex: 1;
+}
+
+.correction-dropdown {
+    flex: 2;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: 'Noto Sans Mono', monospace;
+    background-color: rgb(35, 35, 35);
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 8px;
+    color: rgb(210, 191, 149);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.correction-dropdown:focus {
+    outline: none;
+    border-color: rgb(170, 101, 25);
+    background-color: rgb(40, 40, 40);
+}
+
+.correction-dropdown option {
+    background-color: rgb(35, 35, 35);
+    color: rgb(210, 191, 149);
+}
+
+.qr-codes-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    justify-content: space-between;
+}
+
+.qr-code-wrapper {
+    flex: 1;
+    text-align: center;
+    max-width: 48%;
+}
+
+.qr-code-label {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(170, 101, 25);
+    font-family: 'Noto Sans Mono', monospace;
+    text-align: center;
+}
+
+.qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(23, 23, 23);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.qr-code img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.qr-code canvas {
+    display: none;
+    /* Hide the canvas element */
+}
+
+.qr-button {
+    width: 200px;
+    /* Fixed width to match QR code */
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    /* Center the button */
+    display: block;
+    /* Ensure block display for margin auto to work */
+    background: rgb(50, 50, 50);
+    color: rgb(210, 191, 149);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Noto Sans Mono', monospace;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.qr-button:hover {
+    background: rgb(60, 60, 60);
+    color: rgb(210, 191, 149);
+    transform: translateY(-2px);
+}
